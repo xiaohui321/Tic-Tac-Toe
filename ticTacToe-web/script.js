@@ -1,14 +1,14 @@
 /* 0: empty
  * 1: user
  * 10: computer
- * v[0]: result, and  1-9 are the status for each grid 
+ * values[0,10,20...80]: result for each subgrid 
+ * values[1-9,11-19...,81-89] result for each cell
  */
 var played_games;
 var winned_games;
 
 var values = new Array();
-var results = new Array();
-
+var selected_cell;
 function checkSingleResult(array) {
     //return result if already determined
     if(array[0] != 0) return array[0];
@@ -56,29 +56,66 @@ function checkSingleResult(array) {
     return 0;
 }
 
-function reset(){	
-    while(values_0.length > 0) values_0.pop();
-    for(var i = 0; i < 10; i++) values_0.push(0);
-  			
+function checkOverallResult(){
+
+}
+
+function ComputerSelect(){
+    var m = Math.floor(Math.random()*89 + 1);
+    while(m%10 == 0 || values[m] != 0){
+	m++;
+	if(m > 89) m = 1;
+    }
+    document.getElementById(m.toString()).className = "childCube computer";
+    values[m] = 10;
+    return m;
 }
 
 function UserSelect(n){
+    
+   if(values[n] != 0)
+       return;
 
+    selected_cell ++;
+    values[n] = 1;
+    
+    //checkSingleResult(n);
+    if(selected_cell >= 81)
+	alert("Tie Game!");
+
+    var m = ComputerSelect();
+    //checkSingleResult(m);
+}
+
+function reset(){	
+    while(values.length > 0) 
+	values.pop();
+    for(var i = 0; i < 90; i++) 
+	values.push(0);  	   
 }
 
 function init(){
     played_games = 0;
     winned_games = 0;
-
+    selected_cell = 0;
     reset();
 }
 
 $(document).ready(function(){
-    
-    console.log("hi!");
-    $('div .empty').click(function(){
+    init();
+
+    $('.empty').click(function(){
 	$(this).addClass('user');
 	$(this).removeClass('empty');
+	UserSelect(this.id);
+    });
+
+    $('.empty').mouseenter(function(){
+	$(this).addClass('selected');
+    });
+    
+    $('.empty').mouseleave(function(){
+	$(this).removeClass('selected');
     });
 });
 
