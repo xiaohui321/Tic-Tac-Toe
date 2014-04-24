@@ -1,62 +1,71 @@
-
 body {
-	background-color: #FFFFD6;
+    background-color: #FFFFD6;
 }
 
 p {
-	font: Verdana, Arial,sans-serif;
-	font-size: 45px;
-	text-align: center;
-	color: #FF6600;
-}
-
-table {
-	border-spacing: 26px;
-
-	border-radius: 20px;
-	border-color: white;
-
-	background-color: #FF6600;
-
-	height: 710px;
-	width:  710px;
-
-	position: relative;
-
-	top: 50%;
-	left:50%;
-
-	margin-left: -350px;
+    font: Verdana, Arial,sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: #FF6600;
 }
 
 td {
-	border-spacing: 26px;
-	border-radius: 20px;
+    text-align:center;
+    line-height:60px;
+    margin:10px;10px;10px;10px
+}
 
-	position:float;
-	left:10px;
-	top:10px;
+#grid {
+    border-spacing: 20px;
+    border-radius: 20px;
+    border-color: white;
+    background-color: #FF6600;
+    height: 710px;
+    width:  710px;
+    position: relative;
+    top: 50%;
+    left:50%;
+    margin-left: -350px;
+}
 
-	height:200px;
-	width:200px;
+#status {
+    position:relative;
+    top:40%;
+    left: 10%;
+}
 
-	border-color: #FF6600;
+.parentCube {
+    border-spacing: 10px;
+    border-radius: 10px;
+    border-color: #FF6600;
+    background-color: #FFFFFF;
+    position:float;
+    height:210px;
+    width:210px;
+    margin:20px 0px 0px 20px;
+    float:left;
+}
 
-	margin:0px 8px 0px 8px;
-
-	background-color: #FFFFFF;
-
-	float: left;
+.childCube {
+    border-spacing: 5px;
+    border-radius: 5px;
+    border-color: #000000;
+    background-color: #DA9147;
+    position:float;
+    height:63px;
+    width:63px;
+    margin:5px 0px 0px 5px;
+    float:left;
 }
 
 .empty {
-	background-color: #FFFFFF;
+    background-color: #DA9147;
 }
 
 .user {
-	background-color: #FF0000;
+    background-color: #CC2900;
 }
 
 .computer {
-	background-color: #00FF00;
+    background-color: #FFCC99;
 }

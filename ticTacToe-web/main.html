@@ -1,31 +1,123 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>A 9 * 9 Tic Tac Toe Game</title>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-	<p> This is a 9 * 9 Tic Tac Toe Game!</p>
-	<table class="out">
-		<tr>
-			<td class='empty' id='1'></td>
-			<td class='empty' id='2'></td>
-			<td class='empty' id='3'></td>
-		</tr>
-		<tr>
-			<td class='empty' id='4'></td>
-			<td class='empty' id='5'></td>
-			<td class='empty' id='6'></td>
-		</tr>
-		<tr>
-			<td class='empty' id='7'></td>
-			<td class='empty' id='8'></td>
-			<td class='empty' id='9'></td>
-			</tr>
-	</table>
+  <head>
+    <title>A 9 * 9 Tic Tac Toe Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <p> This is a 9 * 9 Tic Tac Toe Game!</p>
+    <div id="status">
+      <table>
+	<tr>
+	  <td class="childCube empty">Empty</td>
+	  <td class="childCube user">You</td>
+	  <td class="childCube computer">Computer</td>
+	</tr>
+      </table>
+    </div>
 
-
-</body>
+    <div id="grid">
+      <div class="parentCube" id="1">
+	<div class="childCube empty" id="11"></div>
+	<div class="childCube empty" id="12"></div>
+	<div class="childCube empty" id="13"></div>
+	<div class="childCube empty" id="14"></div>
+	<div class="childCube empty" id="15"></div>
+	<div class="childCube empty" id="16"></div>
+	<div class="childCube empty" id="17"></div>
+	<div class="childCube empty" id="18"></div>
+	<div class="childCube empty" id="19"></div>
+      </div>
+      <div class="parentCube" id="2">
+	<div class="childCube empty" id="21"></div>
+	<div class="childCube empty" id="22"></div>
+	<div class="childCube empty" id="23"></div>
+	<div class="childCube empty" id="24"></div>
+	<div class="childCube empty" id="25"></div>
+	<div class="childCube empty" id="26"></div>
+	<div class="childCube empty" id="27"></div>
+	<div class="childCube empty" id="28"></div>
+	<div class="childCube empty" id="29"></div>
+      </div>
+      <div class="parentCube" id="3">
+	<div class="childCube empty" id="31"></div>
+	<div class="childCube empty" id="32"></div>
+	<div class="childCube empty" id="33"></div>
+	<div class="childCube empty" id="34"></div>
+	<div class="childCube empty" id="35"></div>
+	<div class="childCube empty" id="36"></div>
+	<div class="childCube empty" id="37"></div>
+	<div class="childCube empty" id="38"></div>
+	<div class="childCube empty" id="39"></div>
+      </div>
+      <div class="parentCube" id="4">
+	<div class="childCube empty" id="41"></div>
+	<div class="childCube empty" id="42"></div>
+	<div class="childCube empty" id="43"></div>
+	<div class="childCube empty" id="44"></div>
+	<div class="childCube empty" id="45"></div>
+	<div class="childCube empty" id="46"></div>
+	<div class="childCube empty" id="47"></div>
+	<div class="childCube empty" id="48"></div>
+	<div class="childCube empty" id="49"></div>
+      </div>
+      <div class="parentCube" id="5">
+	<div class="childCube empty" id="50"></div>
+	<div class="childCube empty" id="51"></div>
+	<div class="childCube empty" id="52"></div>
+	<div class="childCube empty" id="53"></div>
+	<div class="childCube empty" id="54"></div>
+	<div class="childCube empty" id="55"></div>
+	<div class="childCube empty" id="56"></div>
+	<div class="childCube empty" id="57"></div>
+	<div class="childCube empty" id="58"></div>
+      </div>
+      <div class="parentCube" id="6">
+	<div class="childCube empty" id="61"></div>
+	<div class="childCube empty" id="62"></div>
+	<div class="childCube empty" id="63"></div>
+	<div class="childCube empty" id="64"></div>
+	<div class="childCube empty" id="65"></div>
+	<div class="childCube empty" id="66"></div>
+	<div class="childCube empty" id="67"></div>
+	<div class="childCube empty" id="68"></div>
+	<div class="childCube empty" id="69"></div>
+      </div>
+      <div class="parentCube" id="7">
+	<div class="childCube empty" id="71"></div>
+	<div class="childCube empty" id="72"></div>
+	<div class="childCube empty" id="73"></div>
+	<div class="childCube empty" id="74"></div>
+	<div class="childCube empty" id="75"></div>
+	<div class="childCube empty" id="76"></div>
+	<div class="childCube empty" id="77"></div>
+	<div class="childCube empty" id="78"></div>
+	<div class="childCube empty" id="79"></div>
+      </div>
+      <div class="parentCube" id="8">
+	<div class="childCube empty" id="81"></div>
+	<div class="childCube empty" id="82"></div>
+	<div class="childCube empty" id="83"></div>
+	<div class="childCube empty" id="84"></div>
+	<div class="childCube empty" id="85"></div>
+	<div class="childCube empty" id="86"></div>
+	<div class="childCube empty" id="87"></div>
+	<div class="childCube empty" id="88"></div>
+	<div class="childCube empty" id="89"></div>
+      </div>
+      <div class="parentCube" id="9">
+	<div class="childCube empty" id="91"></div>
+	<div class="childCube empty" id="92"></div>
+	<div class="childCube empty" id="93"></div>
+	<div class="childCube empty" id="94"></div>
+	<div class="childCube empty" id="95"></div>
+	<div class="childCube empty" id="96"></div>
+	<div class="childCube empty" id="97"></div>
+	<div class="childCube empty" id="98"></div>
+	<div class="childCube empty" id="99"></div>
+      </div>  
+    </div>
+  </body>
 </html>
